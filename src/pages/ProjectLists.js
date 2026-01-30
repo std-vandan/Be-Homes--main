@@ -38,7 +38,22 @@ export default function ProjectDataTable() {
     fetchProjects();
   }, []);
 
-
+  // Fetch managers from the user API and filter those with Manager role
+  useEffect(() => {
+    const fetchManagers = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/user/view/");
+        const allUsers = res.data.files || [];
+        const mgrs = allUsers.filter(
+          (user) => user.role && user.role.toLowerCase() === "manager"
+        );
+        setManagers(mgrs);
+      } catch (error) {
+        console.error("Error fetching managers:", error);
+      }
+    };
+    fetchManagers();
+  }, []);
 
   // Filter projects based on the search query
   const filteredProjects = projects.filter((project) =>
@@ -293,7 +308,7 @@ export default function ProjectDataTable() {
               </table>
             </div>
           ) : (
-            <p>Loading execution planning data...</p>
+            <p>loading data.</p>
           )}
         </Modal.Body>
         <Modal.Footer>
