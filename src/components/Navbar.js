@@ -63,7 +63,7 @@ const Navbar = (props) => {
         <>
 
 
-            {/* Desktop Header */}
+            
             <div className={`sidebar ${isOpen ? 'open' : 'closed'} d-desktop`}>
                 <div className={`nav-head d-flex justify-content-between align-items-center mt-3 px-2 ${isOpen ? '' : 'flex-column-reverse'}`} >
 
