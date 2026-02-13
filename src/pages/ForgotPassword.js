@@ -68,19 +68,23 @@ export default function ForgotPassword() {
           </div>
         </div>
         <div className="col-lg-6 col-md-12 m-auto px-5">
-          <form className="register-form-grp" onSubmit={handleSubmit}>
-            <div className="mb-2">
-              <label className="register-form-label">Email ID</label>
-              <input
-                type="email"
-                name="email"
-                className="form-control register-form-control"
-                placeholder="Enter Email ID"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
+  <form className="register-form-grp" onSubmit={handleSubmit}>
+    <div className="mb-3">
+      <label htmlFor="email" className="register-form-label">
+        Email ID
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        className="form-control register-form-control"
+        placeholder="Enter your email address"
+        value={formData.email}
+        onChange={handleChange}
+        autoComplete="email"
+        required
+      />
+    </div>
             <button
               type="submit"
               className="common-btn"
