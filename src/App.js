@@ -4,7 +4,7 @@ import { AuthContext, AuthProvider } from './components/AuthContext';
 import Navbar from "./components/Navbar";
 import ProtectedRoute from './components/ProtectedRoute';
 import { ThemeProvider } from './components/ThemeContext';
- import AdminPage from "./pages/AdminPage";
+
 
 import Dashboard from "./pages/Dashboard";
 import Dispatch from "./pages/Dispatch";
@@ -13,12 +13,13 @@ import ExecutionPlanning from "./pages/ExecutionPlanning";
 import ForgotPassword from "./pages/ForgotPassword";
 
 import Login from "./pages/Login";
-import ManagerPage from "./pages/ManagerPage";
+
 import MaterialReceived from "./pages/MaterialReceived";
 import Measurement from "./pages/Measurement";
 import Payment from "./pages/Payment";
 import Presentation from "./pages/Presentation";
 import Project from "./pages/Project";
+
 import Purchase from "./pages/Purchase";
 import Quotation from "./pages/Quotation";
 import Register from "./pages/Register";
@@ -27,7 +28,7 @@ import ResetPassword from "./pages/ResetPassword";
 
 import EditProject from "./components/EditProject";
 
-import Unauthorized from "./pages/Unauthorized";
+
 import './css/bootstrap.css';
 import './css/style.css';
 import ProjectsList from "./pages/ProjectLists";
@@ -47,15 +48,13 @@ function App() {
       <div className="page-slide">
         <Routes>
           <Route path="/" element={<ProtectedRoute allowedRoles={['Admin', 'Manager']}><Dashboard /></ProtectedRoute>} />
-          <Route path="/admin" element={<ProtectedRoute allowedRoles={['Admin']}><AdminPage /></ProtectedRoute>} /> 
-           <Route path="/manager" element={<ProtectedRoute allowedRoles={['Admin', 'Manager']}><ManagerPage /></ProtectedRoute>} />
-          <Route path="/project" element={<ProtectedRoute allowedRoles={['Admin', 'Manager']}><Project /></ProtectedRoute>} />
+          
           
           
           <Route path="/presentation" element={<ProtectedRoute allowedRoles={['Admin', 'Manager']}><Presentation /></ProtectedRoute>} />
           <Route path="/quotation" element={<ProtectedRoute allowedRoles={['Admin', 'Manager']}><Quotation /></ProtectedRoute>} />
          <Route path="/material-received" element={<ProtectedRoute allowedRoles={['Admin', 'Manager']}><MaterialReceived /></ProtectedRoute>} />
-          
+          <Route path="/project" element={<ProtectedRoute allowedRoles={['Admin', 'Manager']}><Project /></ProtectedRoute>} />
           <Route path="/dispatch" element={<ProtectedRoute allowedRoles={['Admin', 'Manager']}><Dispatch /></ProtectedRoute>} />
           <Route path="/purchase" element={<ProtectedRoute allowedRoles={['Admin', 'Manager']}><Purchase /></ProtectedRoute>} />
           <Route path="/measurement" element={<ProtectedRoute allowedRoles={['Admin', 'Manager']}><Measurement /></ProtectedRoute>} />
@@ -71,7 +70,7 @@ function App() {
           <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-         <Route path="/unauthorized" element={<Unauthorized />} /> 
+         
         </Routes>
       </div>
     </>

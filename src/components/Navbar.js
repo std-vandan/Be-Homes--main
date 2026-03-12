@@ -20,8 +20,6 @@ import InactiveMeasurementIcon from "../img/measurement-icon.svg";
 import ActiveQuotationIcon from "../img/active-quotation-icon.svg";
 import InactiveQuotationIcon from "../img/quotation-icon.svg";
 
-import ActivePlanningIcon from "../img/active-planning-icon.svg";
-import InactivePlanningIcon from "../img/planning-icon.svg";
 
 import ActivePurchaseIcon from "../img/active-purchase-icon.svg";
 import InactivePurchaseIcon from "../img/purchase-icon.svg";
@@ -63,7 +61,7 @@ const Navbar = (props) => {
         <>
 
 
-            
+            {/* Desktop Header */}
             <div className={`sidebar ${isOpen ? 'open' : 'closed'} d-desktop`}>
                 <div className={`nav-head d-flex justify-content-between align-items-center mt-3 px-2 ${isOpen ? '' : 'flex-column-reverse'}`} >
 
@@ -95,7 +93,7 @@ const Navbar = (props) => {
                         </Link>
                         <span className="tooltip"></span>
                     </li>
-         
+                    
 
                     
                     <li>
@@ -113,7 +111,104 @@ const Navbar = (props) => {
                             {isOpen && <span className="links_name"> Presentation</span>}
                         </Link>
                         <span className="tooltip"></span>
-                    </li>       
+                    </li>       <li>
+
+                        <Link to="/quotation" className={location.pathname === '/quotation' ? 'nav-active' : ''}>
+
+
+                            {isOpen ? (
+                                <div>
+                                    <img src={location.pathname === '/quotation' ? ActiveQuotationIcon : InactiveQuotationIcon} alt="" />
+                                </div>
+                            ) : (
+                                <img className="icon" src={location.pathname === '/quotation' ? ActiveQuotationIcon : InactiveQuotationIcon} alt="" />
+                            )}
+                            {isOpen && <span className="links_name"> Quotation</span>}
+                        </Link>
+                        <span className="tooltip"></span>
+                    </li>
+                    <li>
+
+                        <Link to="/measurement" className={location.pathname === '/measurement' ? 'nav-active' : ''}>
+
+
+                            {isOpen ? (
+                                <div>
+                                    <img src={location.pathname === '/measurement' ? ActiveMeasurementIcon : InactiveMeasurementIcon} alt="" />
+                                </div>
+                            ) : (
+                                <img className="icon" src={location.pathname === '/measurement' ? ActiveMeasurementIcon : InactiveMeasurementIcon} alt="" />
+                            )}
+                            {isOpen && <span className="links_name"> Measurement</span>}
+                        </Link>
+                        <span className="tooltip"></span>
+                    </li>
+                    
+                    <li>
+
+                        <Link to="/purchase" className={location.pathname === '/purchase' ? 'nav-active' : ''}>
+
+
+                            {isOpen ? (
+                                <div>
+                                    <img src={location.pathname === '/purchase' ? ActivePurchaseIcon : InactivePurchaseIcon} alt="" />
+                                </div>
+                            ) : (
+                                <img className="icon" src={location.pathname === '/purchase' ? ActivePurchaseIcon : InactivePurchaseIcon} alt="" />
+                            )}
+                            {isOpen && <span className="links_name"> Purchase</span>}
+                        </Link>
+                        <span className="tooltip"></span>
+                    </li>
+                    <li>
+
+                        <Link to="/material-received" className={location.pathname === '/material-received' ? 'nav-active' : ''}>
+
+
+                            {isOpen ? (
+                                <div>
+                                    <img src={location.pathname === '/material-received' ? ActiveMaterialIcon : InactiveMaterialIcon} alt="" />
+                                </div>
+                            ) : (
+                                <img className="icon" src={location.pathname === '/material-received' ? ActiveMaterialIcon : InactiveMaterialIcon} alt="" />
+                            )}
+                            {isOpen && <span className="links_name"> Material Received </span>}
+                        </Link>
+                        <span className="tooltip"></span>
+                    </li>
+                    
+                    <li>
+
+                        <Link to="/dispatch" className={location.pathname === '/dispatch' ? 'nav-active' : ''}>
+
+
+                            {isOpen ? (
+                                <div>
+                                    <img src={location.pathname === '/dispatch' ? ActiveDispatchIcon : InactiveDispatchIcon} alt="" />
+                                </div>
+                            ) : (
+                                <img className="icon" src={location.pathname === '/dispatch' ? ActiveDispatchIcon : InactiveDispatchIcon} alt="" />
+                            )}
+                            {isOpen && <span className="links_name"> Dispatch </span>}
+                        </Link>
+                        <span className="tooltip"></span>
+                    </li>
+                    <li>
+
+                        <Link to="/payment" className={location.pathname === '/payment' ? 'nav-active' : ''}>
+
+
+                            {isOpen ? (
+                                <div>
+                                    <img src={location.pathname === '/payment' ? ActivePaymentIcon : InactivePaymentIcon} alt="" />
+                                </div>
+                            ) : (
+                                <img className="icon" src={location.pathname === '/payment' ? ActivePaymentIcon : InactivePaymentIcon} alt="" />
+                            )}
+                            {isOpen && <span className="links_name"> Payment </span>}
+                        </Link>
+                        <span className="tooltip"></span>
+                    </li>
                     
 
 
@@ -145,23 +240,6 @@ const Navbar = (props) => {
 </Link>
 <span className="tooltip"></span>
 </li>
-<li>
-
-<Link to="/execution-planning" className={location.pathname === '/execution-planning' ? 'nav-active' : ''}>
-
-
- 
-        <div>
-            <img src={location.pathname === '/execution-planning' ? ActivePlanningIcon : InactivePlanningIcon} alt="" />
-        </div>
-  
-        <img className="icon" src={location.pathname === '/execution-planning' ? ActivePlanningIcon : InactivePlanningIcon} alt="" />
-    
-    <span className={location.pathname === '/execution-planning' ? 'text-nav-active' : 'links_name'}> Execution Planning</span>
-</Link>
-<span className="tooltip"></span>
-</li>
-
 
 
 
@@ -183,10 +261,101 @@ const Navbar = (props) => {
 <span className="tooltip"></span>
 </li>      
 
+ <li>
+
+<Link to="/quotation" className={location.pathname === '/quotation' ? 'nav-active' : ''}>
 
 
+    
+        <div>
+            <img src={location.pathname === '/quotation' ? ActiveQuotationIcon : InactiveQuotationIcon} alt="" />
+        </div>
+    
+        <img className="icon" src={location.pathname === '/quotation' ? ActiveQuotationIcon : InactiveQuotationIcon} alt="" />
+    <span className={location.pathname === '/quotation' ? 'text-nav-active' : 'links_name'}> Quotation</span>
+</Link>
+<span className="tooltip"></span>
+</li>
+<li>
+
+<Link to="/measurement" className={location.pathname === '/measurement' ? 'nav-active' : ''}>
 
 
+  
+        <div>
+            <img src={location.pathname === '/measurement' ? ActiveMeasurementIcon : InactiveMeasurementIcon} alt="" />
+        </div>
+  
+        <img className="icon" src={location.pathname === '/measurement' ? ActiveMeasurementIcon : InactiveMeasurementIcon} alt="" />
+    <span className={location.pathname === '/measurement' ? 'text-nav-active' : 'links_name'}> Measurement</span>
+</Link>
+<span className="tooltip"></span>
+</li>
+
+<li>
+
+<Link to="/purchase" className={location.pathname === '/purchase' ? 'nav-active' : ''}>
+
+
+   
+        <div>
+            <img src={location.pathname === '/purchase' ? ActivePurchaseIcon : InactivePurchaseIcon} alt="" />
+        </div>
+   
+        <img className="icon" src={location.pathname === '/purchase' ? ActivePurchaseIcon : InactivePurchaseIcon} alt="" />
+    
+    <span className={location.pathname === '/purchase' ? 'text-nav-active' : 'links_name'}> Purchase</span>
+</Link>
+<span className="tooltip"></span>
+</li>
+<li>
+
+<Link to="/material-received" className={location.pathname === '/material-received' ? 'nav-active' : ''}>
+
+
+    
+        <div>
+            <img src={location.pathname === '/material-received' ? ActiveMaterialIcon : InactiveMaterialIcon} alt="" />
+        </div>
+    
+        <img className="icon" src={location.pathname === '/material-received' ? ActiveMaterialIcon : InactiveMaterialIcon} alt="" />
+    
+   <span className={location.pathname === '/material-received' ? 'text-nav-active' : 'links_name'}> Material Received </span>
+</Link>
+<span className="tooltip"></span>
+</li>
+
+<li>
+
+<Link to="/dispatch" className={location.pathname === '/dispatch' ? 'nav-active' : ''}>
+
+
+   
+        <div>
+            <img src={location.pathname === '/dispatch' ? ActiveDispatchIcon : InactiveDispatchIcon} alt="" />
+        </div>
+   
+        <img className="icon" src={location.pathname === '/dispatch' ? ActiveDispatchIcon : InactiveDispatchIcon} alt="" />
+   <span className={location.pathname === '/dispatch' ? 'text-nav-active' : 'links_name'}> Dispatch </span>
+</Link>
+<span className="tooltip"></span>
+</li>
+<li>
+
+<Link to="/payment" className={location.pathname === '/payment' ? 'nav-active' : ''}>
+
+
+    
+        <div>
+            <img src={location.pathname === '/payment' ? ActivePaymentIcon : InactivePaymentIcon} alt="" />
+        </div>
+
+        <img className="icon" src={location.pathname === '/payment' ? ActivePaymentIcon : InactivePaymentIcon} alt="" />
+    
+    <span className={location.pathname === '/payment' ? 'text-nav-active' : 'links_name'}> Payment </span>
+</Link>
+<span className="tooltip"></span>
+</li>
 
 
         </ul>

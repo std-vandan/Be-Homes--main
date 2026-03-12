@@ -21,7 +21,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/project/view");
+        const response = await axios.get("https://behomes-1.onrender.com/project/view");
         setProjects(response.data.Datas || []);
       } catch (error) {
         console.error("Error fetching projects:", error);
@@ -31,13 +31,27 @@ export default function Dashboard() {
     fetchProjects();
   }, []);
 
+  // Fetch counts for prospects and projects from backend
+  useEffect(() => {
+    const fetchProjectCounts = async () => {
+      try {
+        const response = await axios.get("https://behomes-1.onrender.com/project/Projects_Overdue");
+        // Assuming the backend returns { msg:"Success", Prospect: <number>, Project: <number> }
+        setProspectCount(response.data.Prospect);
+        setProjectCount(response.data.Project);
+      } catch (error) {
+        console.error("Error fetching project counts:", error);
+      }
+    };
 
+    fetchProjectCounts();
+  }, []);
 
   // Fetch user data and calculate total and unapproved counts
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/user/view");
+        const response = await axios.get("https://behomes-1.onrender.com/user/view");
         const users = response.data; // Assuming response.data returns an array of users
         setUserCount(users.length);
         // Filter users where role === "Unapproved"

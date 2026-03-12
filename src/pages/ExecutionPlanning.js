@@ -19,7 +19,7 @@ export default function ExecutionPlanning() {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/project/view');
+                const response = await axios.get('https://behomes-1.onrender.com/project/view');
                 setProjects(response.data.Datas);
             } catch (error) {
                 console.error('Error fetching projects:', error);
@@ -40,7 +40,7 @@ export default function ExecutionPlanning() {
         }
 
         try {
-            const response = await axios.get(`http://localhost:5000/executinPlanning/files/proj/${executionId}`);
+            const response = await axios.get(`https://behomes-1.onrender.com/executinPlanning/files/proj/${executionId}`);
 
             const filesData = response.data.files || {};
             // Save the entire filesData and use it for final dates
@@ -76,7 +76,7 @@ export default function ExecutionPlanning() {
         setError('');
 
         try {
-            await axios.post(`http://localhost:5000/executinPlanning/create/${selectedProjectId}`, {
+            await axios.post(`https://behomes-1.onrender.com/executinPlanning/create/${selectedProjectId}`, {
                 Project_Start: { Execution_date: selectedDates[0] },
                 Basic_Drawing: { Execution_date: selectedDates[1] },
                 Presentation: { Execution_date: selectedDates[2] },
