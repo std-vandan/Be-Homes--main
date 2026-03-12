@@ -308,7 +308,7 @@ export default function ProjectDataTable() {
               </table>
             </div>
           ) : (
-            <p>Loading execution planning data...</p>
+            <p>loading data.</p>
           )}
         </Modal.Body>
         <Modal.Footer>
