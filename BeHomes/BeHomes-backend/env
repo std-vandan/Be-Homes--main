@@ -1,0 +1,10 @@
+MONGODB_URI=mongodb+srv://admin:1234@api.w1sen0x.mongodb.net/Project_Api?retryWrites=true&w=majority
+JWT_SECRET=yourSecretKey
+EMAIL=mohitnapure@gmail.com
+PASSWORD=rcxy vdka eyna ipbb
+YOUR_API_KEY=1a3e52947247f8d06f48e73e9b6a38a8-us11
+YOUR_SERVER_PREFIX=us11
+CLIENT_URL=http://localhost:5000/api/auth/
+SECRET_KEY=secret_HagsN82BHoNH2oiJ
+CONVER_API_KEY=secret_HagsN82BHoNH2oiJ
+TESTING=hello
